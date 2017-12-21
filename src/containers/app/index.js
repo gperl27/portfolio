@@ -1,20 +1,27 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
-import Home from '../home'
-import About from '../about'
+import { withStyles } from 'material-ui/styles';
+import Home from '../home';
+import Header from '../home/Header';
 
-const App = () => (
-  <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
-    </header>
+const styles = {
+  root: {
+    width: '100%',
+  },
+};
 
-    <main>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about-us" component={About} />
-    </main>
-  </div>
-)
+const App = (props) => {
+  const { classes } = props;
+  return (
+    <div className={classes.root}>
+      <header>
+        <Header />
+      </header>
 
-export default App
+      <main>
+        <Home />
+      </main>
+    </div>
+  )
+}
+
+export default withStyles(styles)(App)
