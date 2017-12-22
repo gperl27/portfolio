@@ -14,8 +14,14 @@ import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 
 const styles = theme => ({
+    card: {
+        paddingTop: '15px',
+    },
     media: {
-        height: '250px',
+        height: '150px',
+        width: '150px',
+        margin: 'auto',
+        // marginTop: '15px',
     },
     flexGrow: {
         flex: '1 1 auto',
@@ -29,10 +35,10 @@ class Bio extends React.Component {
         return (
             <div>
                 <Card className={classes.card}>
-                    <CardMedia
+                    <Avatar
+                        alt="Adelle Charles"
+                        src="https://pbs.twimg.com/profile_images/924904314715258880/_yBUUYAY_400x400.jpg"
                         className={classes.media}
-                        image="http://via.placeholder.com/350x150"
-                        title="Contemplative Reptile"
                     />
                     <CardContent>
                         <Typography component="p">

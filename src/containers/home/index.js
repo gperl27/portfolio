@@ -14,11 +14,15 @@ import Typography from 'material-ui/Typography/Typography';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
+    display: 'flex',
+    flexGrow: '1 2 1',
+    flexDirection: 'column',
     backgroundColor: 'rgb(35, 39, 65)',
     height: '100%',
     background: 'bottom no-repeat transparent',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   paper: {
     marginTop: '25px',
@@ -47,10 +51,11 @@ const Home = props => {
         alignItems='center'
         justify='center'
       >
-        <Grid item xs={6}>
+        <Grid item md={4} sm={6} xs={10}>
             <Bio/>
         </Grid>
       </Grid>
+      <h3 style={{color: 'white'}}>See work below</h3>
     </div>
   )
 }
