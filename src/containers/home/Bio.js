@@ -51,12 +51,12 @@ class Bio extends React.Component {
                     <CardActions disableActionSpacing>
                         <Tooltip title="Check out my github" placement="bottom">
                             <IconButton aria-label="Github Link">
-                                <img style={{ height: '25px', 'width': '25px' }} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="Github Icon" />
+                                <a target="_blank" href="https://github.com/gperl27"><img style={{ height: '25px', 'width': '25px' }} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="Github Icon" /></a>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Connect with me on LinkedIn" placement="bottom">
                             <IconButton aria-label="LinkedIn Link">
-                                <img style={{ height: '25px', 'width': '25px' }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CIS-A2K_Linkedin_Icon_%28Black%29.svg/600px-CIS-A2K_Linkedin_Icon_%28Black%29.svg.png" alt="LinkedIn Icon" />
+                                <a target="_blank" href="https://www.linkedin.com/in/gregperlman/"><img style={{ height: '25px', 'width': '25px' }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CIS-A2K_Linkedin_Icon_%28Black%29.svg/600px-CIS-A2K_Linkedin_Icon_%28Black%29.svg.png" alt="LinkedIn Icon" /></a>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Contact Me" placement="bottom">
@@ -81,4 +81,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default withStyles(styles)(connect(
     null,
     mapDispatchToProps,
-  )(Bio))
+)(Bio))

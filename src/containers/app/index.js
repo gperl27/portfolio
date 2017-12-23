@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Home from '../home';
-import Header from '../home/Header';
+import Work from '../work';
 
 const styles = {
   root: {
@@ -20,7 +20,9 @@ const App = (props) => {
       <main className={classes.main}>
         <Home />
       </main>
-      <div>Work here</div>
+      <section>
+        <Work />
+      </section>
     </div>
   )
 }

@@ -1,9 +1,13 @@
 export const COPY_EMAIL = 'COPY_EMAIL';
 export const UNSET_SNACKBAR = 'UNSET_SNACKBAR';
+export const OPEN_DIALOG = 'OPEN_DIALOG';
+export const CLOSE_DIALOG = 'CLOSE_DIALOG';
 
 const initialState = {
   copied: false,
   snackText: '',
+  dialog: false,
+  dialogHtml: null,
 }
 
 export default (state = initialState, action) => {
@@ -19,6 +23,17 @@ export default (state = initialState, action) => {
         ...state,
         copied: false,
         snackText: '',
+      }
+    case OPEN_DIALOG:
+      return {
+        ...state,
+        dialog: true,
+        dialogHtml: action.payload
+      }
+    case CLOSE_DIALOG:
+      return {
+        ...state,
+        dialog: false,
       }
     default:
       return state
@@ -37,6 +52,23 @@ export const unsetSnackbar = () => {
   return dispatch => {
     dispatch({
       type: UNSET_SNACKBAR
+    })
+  }
+}
+
+export const openDialog = (html) => {
+  return dispatch => {
+    dispatch({
+      type: OPEN_DIALOG,
+      payload: html,
+    })
+  }
+}
+
+export const closeDialog = () => {
+  return dispatch => {
+    dispatch({
+      type: CLOSE_DIALOG
     })
   }
 }
