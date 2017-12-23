@@ -12,6 +12,9 @@ import FavoriteIcon from 'material-ui-icons/Favorite';
 import ShareIcon from 'material-ui-icons/Share';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
+import Icon from 'material-ui/Icon/Icon';
+import Tooltip from 'material-ui/Tooltip';
+
 
 const styles = theme => ({
     card: {
@@ -46,12 +49,21 @@ class Bio extends React.Component {
                         </Typography>
                     </CardContent>
                     <CardActions disableActionSpacing>
-                        <IconButton aria-label="Add to favorites">
-                            <FavoriteIcon />
-                        </IconButton>
-                        <IconButton aria-label="Share">
-                            <ShareIcon />
-                        </IconButton>
+                        <Tooltip title="Check out my github" placement="bottom">
+                            <IconButton aria-label="Github Link">
+                                <img style={{ height: '25px', 'width': '25px' }} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="Github Icon" />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Connect with me on LinkedIn" placement="bottom">
+                            <IconButton aria-label="LinkedIn Link">
+                                <img style={{ height: '25px', 'width': '25px' }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CIS-A2K_Linkedin_Icon_%28Black%29.svg/600px-CIS-A2K_Linkedin_Icon_%28Black%29.svg.png" alt="LinkedIn Icon" />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Contact Me" placement="bottom">
+                            <IconButton aria-label="Email">
+                                <Icon>email</Icon>
+                            </IconButton>
+                        </Tooltip>
                     </CardActions>
                 </Card>
             </div>
