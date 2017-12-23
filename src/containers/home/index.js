@@ -1,16 +1,19 @@
 import React from 'react'
 import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Divider from 'material-ui/Divider';
 import Particles from 'react-particles-js';
-import Bio from './Bio';
-
-import particleOptions from '../../assets/particles';
 import Typography from 'material-ui/Typography/Typography';
+import Snackbar from 'material-ui/Snackbar';
+
+import { unsetSnackbar } from '../../modules/general';
+
+import Bio from './Bio';
+import particleOptions from '../../assets/particles';
 
 const styles = theme => ({
   root: {
@@ -52,12 +55,34 @@ const Home = props => {
         justify='center'
       >
         <Grid item md={4} sm={6} xs={10}>
-            <Bio/>
+          <Bio />
         </Grid>
       </Grid>
-      <h3 style={{color: 'white'}}>See work below</h3>
+      <Typography type="display1" gutterBottom style={{ color: 'white' }}>See work below</Typography>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        open={props.copied}
+        autoHideDuration={6000}
+        onClose={() => props.unsetSnackbar()}
+        message={<span>{props.snackText}</span>}
+      />
     </div>
   )
 }
 
-export default withStyles(styles)(Home);
+const mapStateToProps = state => ({
+  snackText: state.general.snackText,
+  copied: state.general.copied,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  unsetSnackbar,
+}, dispatch)
+
+export default withStyles(styles)(connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home))

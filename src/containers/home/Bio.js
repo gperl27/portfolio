@@ -1,20 +1,20 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import classnames from 'classnames';
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
-import Collapse from 'material-ui/transitions/Collapse';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
-import red from 'material-ui/colors/red';
-import FavoriteIcon from 'material-ui-icons/Favorite';
-import ShareIcon from 'material-ui-icons/Share';
-import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
-import MoreVertIcon from 'material-ui-icons/MoreVert';
 import Icon from 'material-ui/Icon/Icon';
 import Tooltip from 'material-ui/Tooltip';
+import Snackbar from 'material-ui/Snackbar';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+import email from '../../constants/email';
+import { copyEmail } from '../../modules/general';
 
 const styles = theme => ({
     card: {
@@ -60,9 +60,12 @@ class Bio extends React.Component {
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Contact Me" placement="bottom">
-                            <IconButton aria-label="Email">
-                                <Icon>email</Icon>
-                            </IconButton>
+                            <CopyToClipboard text={email.email}
+                                onCopy={() => this.props.copyEmail()}>
+                                <IconButton aria-label="Email">
+                                    <Icon>email</Icon>
+                                </IconButton>
+                            </CopyToClipboard>
                         </Tooltip>
                     </CardActions>
                 </Card>
@@ -71,4 +74,11 @@ class Bio extends React.Component {
     }
 }
 
-export default withStyles(styles)(Bio);
+const mapDispatchToProps = dispatch => bindActionCreators({
+    copyEmail,
+}, dispatch)
+
+export default withStyles(styles)(connect(
+    null,
+    mapDispatchToProps,
+  )(Bio))
