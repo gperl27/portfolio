@@ -24,7 +24,6 @@ const styles = theme => ({
     },
     dialogContainer: {
         height: '100%',
-        backgroundColor: 'blue',
     },
     dialogContent: {
         marginTop: '100px',
@@ -49,8 +48,8 @@ const Work = props => {
                 fullScreen
                 open={props.dialog}
                 onClose={props.closeDialog}
-            >   <div className={classes.dialogContainer}>
-                    <Button fab mini onClick={props.closeDialog} color="primary" aria-label="cancel" className={classes.button}>
+            >   <div className={classes.dialogContainer} style={{ backgroundColor: props.dialogBgColor }}>
+                    <Button fab mini onClick={props.closeDialog} style={{ backgroundColor: props.dialogBtnColor}} aria-label="cancel" className={classes.button}>
                         <ArrowBackIcon />
                     </Button>
                     <Grid
@@ -72,6 +71,8 @@ const Work = props => {
 }
 
 const mapStateToProps = state => ({
+    dialogBtnColor: state.general.dialogBtnColor,
+    dialogBgColor: state.general.dialogBgColor,
     dialogHtml: state.general.dialogHtml,
     dialog: state.general.dialog,
 })

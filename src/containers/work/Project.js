@@ -31,15 +31,17 @@ const Project = props => {
         />
         <CardContent>
           <Typography type="headline" component="h2">
-            Jetride
+            {props.title}
+          </Typography>
+          <Typography type="subheading" gutterBottom>
+            {props.subtitle}
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {props.summary}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button dense color="primary">
+          <Button target="_blank" href={props.link} dense color="primary">
             Visit
           </Button>
           <Button onClick={() => props.openDialog(props.html)} dense color="primary">

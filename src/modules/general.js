@@ -8,6 +8,8 @@ const initialState = {
   snackText: '',
   dialog: false,
   dialogHtml: null,
+  dialogBtnColor: '#aaa',
+  dialogBgColor: '#eee',
 }
 
 export default (state = initialState, action) => {
