@@ -22,7 +22,8 @@ const styles = theme => ({
         top: '25px',
         left: '25px'
     },
-    dialog: {
+    dialogContainer: {
+        height: '100%',
         backgroundColor: 'blue',
     },
     dialogContent: {
@@ -44,28 +45,27 @@ const Work = props => {
                     <ProjectList />
                 </Grid>
             </Grid>
-
-            <button onClick={props.openDialog}>open me</button>
             <Dialog
                 fullScreen
                 open={props.dialog}
                 onClose={props.closeDialog}
-            >
-                <Button fab mini onClick={props.closeDialog} color="primary" aria-label="cancel" className={classes.button}>
-                    <ArrowBackIcon />
-                </Button>
-                <Grid
-                    className={classes.dialog}
-                    container
-                    justify="center"
-                    alignContent="center"
-                >
-                    <Grid item xs={10}>
-                        <Paper className={classes.dialogContent}>
-                            {props.dialogHtml}
-                        </Paper>
+            >   <div className={classes.dialogContainer}>
+                    <Button fab mini onClick={props.closeDialog} color="primary" aria-label="cancel" className={classes.button}>
+                        <ArrowBackIcon />
+                    </Button>
+                    <Grid
+                        className={classes.dialog}
+                        container
+                        justify="center"
+                        alignContent="center"
+                    >
+                        <Grid item xs={10}>
+                            <Paper className={classes.dialogContent}>
+                                {props.dialogHtml}
+                            </Paper>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </div>
             </Dialog>
         </div >
     )
