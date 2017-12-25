@@ -35,8 +35,9 @@ const Project = props => {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image="https://jetride.com/assets/base/img/layout/logos/JetRide_white_xs.png"
-          title="Jetride"
+          style={props.contain ? { backgroundSize: 'contain'} : null}
+          image={props.media}
+          title={props.title}
         />
         <CardContent>
           <Typography type="headline" component="h2">
