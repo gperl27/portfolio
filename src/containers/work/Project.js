@@ -7,6 +7,7 @@ import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
+import Chip from 'material-ui/Chip';
 
 import { openDialog } from '../../modules/general';
 
@@ -17,6 +18,14 @@ const styles = {
   media: {
     height: 200,
   },
+  row: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  chip: {
+    marginRight: '5px',
+    marginBottom: '5px',
+  }
 };
 
 const Project = props => {
@@ -36,9 +45,16 @@ const Project = props => {
           <Typography type="subheading" gutterBottom>
             {props.subtitle}
           </Typography>
-          <Typography component="p">
+          {/* <Typography component="p">
             {props.summary}
-          </Typography>
+          </Typography> */}
+          <div className={classes.row}>
+            {props.technologies.map((chip, index) => {
+              return (
+                <Chip key={index} className={classes.chip} label={chip} />
+              )
+            })}
+          </div>
         </CardContent>
         <CardActions>
           <Button target="_blank" href={props.link} dense color="primary">

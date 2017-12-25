@@ -44,8 +44,8 @@ class Bio extends React.Component {
                         className={classes.media}
                     />
                     <CardContent>
-                        <Typography component="p">
-                            This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                        <Typography type="body1" gutterBottom>
+                            Hello! My name is Greg Perlman and am currently working in South Florida as a software engineer. I enjoy imagining system designs and architectures, as well as their implementations on both the front and back-ends. I'm always aiming to get a deeper understanding of the technologies I use everyday, as I feel it enhances productivity and capabilities for myself and my peers. At the moment, I'm experimenting with Sails JS as a means to get into real-time, distrbuted systems, and continuing to develop my prowess within the React ecosystem.
                         </Typography>
                     </CardContent>
                     <CardActions disableActionSpacing>
