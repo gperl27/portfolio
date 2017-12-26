@@ -9,52 +9,21 @@ import Project from './Project';
 
 const styles = theme => ({
     root: {
-        // display: 'flex',
-        // flexGrow: '1 2 1',
-        // flexDirection: 'column',
-        // backgroundColor: 'rgb(35, 39, 65)',
-        // height: '100%',
-        // background: 'bottom no-repeat transparent',
-        // backgroundSize: 'cover',
-        // alignItems: 'center',
-        // justifyContent: 'space-around',
+        //styles here
     },
 });
 
 const ProjectList = props => {
     const { classes } = props;
 
-    const jetrideHtml = (
-        <p>Jetride here</p>
-    )
-
-    const wallkeepersHtml = (
-        <p>WK here</p>
-    )
-
-    const goforaHtml = (
-        <p>Gofora here</p>
-    )
-
-    const curatorHtml = (
-        <p>Curator Html</p>
-    )
-
-    const youiHtml = (
-        <p>Youi Html</p>
-    )
-
-
-
     return (
         <Grid
             container
-            alignItems='center'
+            alignItems='flex-start'
             justify='center'
-            spacing={24}
+            spacing={40}
         >
             <Project
-                html={wallkeepersHtml}
                 title='Wallkeepers'
                 subtitle='Full-stack Web Development'
                 summary='Wallkeepers is an end-to-end wall-plan installation company. I helped automate their entire process from scattered, off-the-grid systems to a concise step-by-step admininstrative ecosystem.'
@@ -64,16 +33,6 @@ const ProjectList = props => {
                 contain
             />
             <Project
-                html={goforaHtml}
-                title='GoForA'
-                subtitle='Full-stack iOS Development'
-                summary='GoForA is an iOS app that aims to connect people together through user-made events. I built out both the server-side and mobile services, including features such as real-time chat, in-app purchases, authentication, and other core iOS features.'
-                technologies={['Swift', 'Fireabase', 'Node']}
-                link={'https://itunes.apple.com/us/app/gofora/id1291450689'}
-                media={'/images/gofora-hand.png'}
-            />
-            <Project
-                html={jetrideHtml}
                 title='JetRide'
                 subtitle='Full-stack Web Development'
                 summary='JetRide is a subscription-based boating company out of South Florida. My involvement included creating the system architecture, a full-blown reservation system, a customized CRM, an accounting portal, and more.'
@@ -82,7 +41,6 @@ const ProjectList = props => {
                 media={'/images/sunset.jpg'}
             />
             <Project
-                html={curatorHtml}
                 title='Curator'
                 subtitle='Full-stack Web Development'
                 summary='Curator is an all-in-one digital delivery platform. I have aided in enhancing the system architecture, front-end development, payment services, and various other microservices.'
@@ -90,8 +48,16 @@ const ProjectList = props => {
                 link={'https://www.curatorlive.com/'}
                 media={'/images/curator-logo.png'}
             />
-             <Project
-                html={youiHtml}
+            <Project
+                title='GoForA'
+                subtitle='Full-stack iOS Development'
+                summary='GoForA is an iOS app that aims to connect people together through user-made events. I built out both the server-side and mobile services, including features such as real-time chat, in-app purchases, authentication, and other core iOS features.'
+                technologies={['Swift', 'Firebase', 'Node']}
+                link={'https://itunes.apple.com/us/app/gofora/id1291450689'}
+                media={'/images/gofora-hand.png'}
+                contain
+            />
+            <Project
                 title='Youi'
                 subtitle='Full-stack Web Development'
                 summary='Built during my Ironhack enrollment (2016), Youi is an experimental web-app that builds its own styles based on simple user inputs. It features a crowd-sourced homepage, custom styling templates, and an in-depth analytics platform.'

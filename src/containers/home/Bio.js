@@ -24,7 +24,6 @@ const styles = theme => ({
         height: '150px',
         width: '150px',
         margin: 'auto',
-        // marginTop: '15px',
     },
     flexGrow: {
         flex: '1 1 auto',
@@ -40,7 +39,7 @@ class Bio extends React.Component {
                 <Card className={classes.card}>
                     <Avatar
                         alt="Adelle Charles"
-                        src="https://pbs.twimg.com/profile_images/924904314715258880/_yBUUYAY_400x400.jpg"
+                        src="/images/profile.jpg"
                         className={classes.media}
                     />
                     <CardContent>

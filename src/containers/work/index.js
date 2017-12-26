@@ -12,22 +12,26 @@ import Paper from 'material-ui/Paper';
 import { openDialog, closeDialog } from '../../modules/general';
 
 import ProjectList from './ProjectList';
+import ProjectModalDetail from './ProjectModalDetail';
 
 const styles = theme => ({
     root: {
-        marginTop: '25px',
+        paddingTop: '100px',
+        paddingBottom: '100px',
     },
     button: {
         position: 'fixed',
-        top: '25px',
-        left: '25px'
+        bottom: '50px',
+        left: '50%'
     },
     dialogContainer: {
         height: '100%',
+        display: 'flex',
+        alignContent: 'center',
+        alignItems: 'center',
     },
     dialogContent: {
-        marginTop: '100px',
-        padding: '25px',
+        padding: '50px',
     },
 });
 
@@ -48,8 +52,9 @@ const Work = props => {
                 fullScreen
                 open={props.dialog}
                 onClose={props.closeDialog}
-            >   <div className={classes.dialogContainer} style={{ backgroundColor: props.dialogBgColor }}>
-                    <Button fab mini onClick={props.closeDialog} style={{ backgroundColor: props.dialogBtnColor}} aria-label="cancel" className={classes.button}>
+            >
+                <div className={classes.dialogContainer}>
+                    <Button fab mini onClick={props.closeDialog} aria-label="cancel" className={classes.button}>
                         <ArrowBackIcon />
                     </Button>
                     <Grid
@@ -58,9 +63,13 @@ const Work = props => {
                         justify="center"
                         alignContent="center"
                     >
-                        <Grid item xs={10}>
+                        <Grid item xs={10} md={6}>
                             <Paper className={classes.dialogContent}>
-                                {props.dialogHtml}
+                                <ProjectModalDetail
+                                    title={props.dialogTitle}
+                                    summary={props.dialogSummary}
+                                    images={props.dialogImages}
+                                />
                             </Paper>
                         </Grid>
                     </Grid>
@@ -71,9 +80,9 @@ const Work = props => {
 }
 
 const mapStateToProps = state => ({
-    dialogBtnColor: state.general.dialogBtnColor,
-    dialogBgColor: state.general.dialogBgColor,
-    dialogHtml: state.general.dialogHtml,
+    dialogTitle: state.general.dialogContent.title,
+    dialogSummary: state.general.dialogContent.summary,
+    dialogImages: state.general.dialogContent.images,
     dialog: state.general.dialog,
 })
 

@@ -13,6 +13,7 @@ import Snackbar from 'material-ui/Snackbar';
 import { unsetSnackbar } from '../../modules/general';
 
 import Bio from './Bio';
+import Header from './Header';
 import particleOptions from '../../assets/particles';
 
 const styles = theme => ({
@@ -38,13 +39,14 @@ const styles = theme => ({
     top: '0',
     width: '100%',
     height: '100%'
-  }
+  },
 });
 
 const Home = props => {
   const { classes } = props;
   return (
     <div className={classes.root}>
+      <Header />
       <Particles
         className={classes.particles}
         params={particleOptions}

@@ -7,9 +7,11 @@ const initialState = {
   copied: false,
   snackText: '',
   dialog: false,
-  dialogHtml: null,
-  dialogBtnColor: '#aaa',
-  dialogBgColor: '#eee',
+  dialogContent: {
+    summary: 'Summary here',
+    title: 'Title',
+    images: []
+  },
 }
 
 export default (state = initialState, action) => {
@@ -30,7 +32,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         dialog: true,
-        dialogHtml: action.payload
+        dialogContent: action.payload,
       }
     case CLOSE_DIALOG:
       return {
@@ -58,11 +60,13 @@ export const unsetSnackbar = () => {
   }
 }
 
-export const openDialog = (html) => {
+export const openDialog = (summary, title, images ) => {
+  const data = { summary, title, images  }
+  
   return dispatch => {
     dispatch({
       type: OPEN_DIALOG,
-      payload: html,
+      payload: data,
     })
   }
 }
