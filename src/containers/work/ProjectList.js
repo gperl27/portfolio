@@ -1,9 +1,6 @@
 import React from 'react'
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux'
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography/Typography';
 
 import Project from './Project';
 
@@ -47,6 +44,7 @@ const ProjectList = props => {
                 technologies={['React', 'Laravel', 'Mysql', 'jQuery', 'Stripe', 'Twilio']}
                 link={'https://www.curatorlive.com/'}
                 media={'/images/curator-logo.png'}
+                contain
             />
             <Project
                 title='GoForA'

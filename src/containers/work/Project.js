@@ -80,7 +80,7 @@ class Project extends React.Component {
           </CardContent>
           <CardActions>
             <Button target="_blank" href={link} dense color="primary">
-              Live Site
+              SEE IT LIVE
             </Button>
             <div className={classes.flexGrow} />
             <IconButton

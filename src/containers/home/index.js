@@ -1,11 +1,8 @@
 import React from 'react'
-import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import { withStyles } from 'material-ui/styles';
-import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
-import Divider from 'material-ui/Divider';
 import Particles from 'react-particles-js';
 import Typography from 'material-ui/Typography/Typography';
 import Snackbar from 'material-ui/Snackbar';
@@ -52,6 +49,7 @@ const Home = props => {
         params={particleOptions}
       />
       <Grid
+        spacing={0}
         container
         alignItems='center'
         justify='center'

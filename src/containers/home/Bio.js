@@ -1,16 +1,13 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import classnames from 'classnames';
-import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
+import Card, { CardContent, CardActions } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import Icon from 'material-ui/Icon/Icon';
 import Tooltip from 'material-ui/Tooltip';
-import Snackbar from 'material-ui/Snackbar';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import email from '../../constants/email';
@@ -28,6 +25,10 @@ const styles = theme => ({
     flexGrow: {
         flex: '1 1 auto',
     },
+    emailIcon: {
+        color: "black",
+        marginBottom: '3px',
+    }
 });
 
 class Bio extends React.Component {
@@ -50,18 +51,18 @@ class Bio extends React.Component {
                     <CardActions disableActionSpacing>
                         <Tooltip title="Check out my github" placement="bottom">
                             <IconButton aria-label="Github Link">
-                                <a target="_blank" href="https://github.com/gperl27"><img style={{ height: '25px', 'width': '25px' }} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="Github Icon" /></a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://github.com/gperl27"><img style={{ height: '25px', 'width': '25px' }} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="Github Icon" /></a>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Connect with me on LinkedIn" placement="bottom">
                             <IconButton aria-label="LinkedIn Link">
-                                <a target="_blank" href="https://www.linkedin.com/in/gregperlman/"><img style={{ height: '25px', 'width': '25px' }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CIS-A2K_Linkedin_Icon_%28Black%29.svg/600px-CIS-A2K_Linkedin_Icon_%28Black%29.svg.png" alt="LinkedIn Icon" /></a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/gregperlman/"><img style={{ height: '25px', 'width': '25px' }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CIS-A2K_Linkedin_Icon_%28Black%29.svg/600px-CIS-A2K_Linkedin_Icon_%28Black%29.svg.png" alt="LinkedIn Icon" /></a>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Contact Me" placement="bottom">
                             <CopyToClipboard text={email.email}
                                 onCopy={() => this.props.copyEmail()}>
-                                <IconButton aria-label="Email">
+                                <IconButton className={classes.emailIcon} aria-label="Email">
                                     <Icon>email</Icon>
                                 </IconButton>
                             </CopyToClipboard>
