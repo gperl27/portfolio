@@ -9,6 +9,7 @@ import Typography from 'material-ui/Typography';
 import Icon from 'material-ui/Icon/Icon';
 import Tooltip from 'material-ui/Tooltip';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import classNames from 'classnames';
 
 import email from '../../constants/email';
 import { copyEmail } from '../../modules/general';
@@ -41,10 +42,10 @@ class Bio extends React.Component {
                     <Avatar
                         alt="Adelle Charles"
                         src="/images/profile.jpg"
-                        className={classes.media}
+                        className={classNames(classes.media, 'avatar')}
                     />
                     <CardContent>
-                        <Typography type="body1" gutterBottom>
+                        <Typography className="bio-summary" type="body1" gutterBottom>
                             Hello! My name is Greg Perlman and am currently working in South Florida as a software engineer. I enjoy imagining system designs and architectures, as well as their implementations on both the front and back-ends. I'm always aiming to get a deeper understanding of the technologies I use everyday, as I feel it enhances productivity and capabilities for myself and my peers. At the moment, I'm experimenting with Sails JS as a means to get into real-time, distrbuted systems, and continuing to develop my prowess within the React ecosystem.
                         </Typography>
                     </CardContent>

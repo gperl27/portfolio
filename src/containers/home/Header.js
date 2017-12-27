@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
+import classNames from 'classnames';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
@@ -17,7 +18,7 @@ const Header = props => {
     const { classes } = props;
 
     return (
-        <div className={classes.container}>
+        <div className={classNames(classes.container, 'header-container')}>
             <Typography className={classes.header} type="title">
                 Greg Perlman
             </Typography>

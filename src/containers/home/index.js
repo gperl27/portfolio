@@ -16,9 +16,8 @@ import particleOptions from '../../assets/particles';
 const styles = theme => ({
   root: {
     display: 'flex',
-    flexGrow: '1 2 1',
     flexDirection: 'column',
-    backgroundColor: 'rgb(35, 39, 65)',
+    backgroundImage: 'linear-gradient(340deg,#4ac1ff,#FF9800)',
     height: '100%',
     background: 'bottom no-repeat transparent',
     backgroundSize: 'cover',
