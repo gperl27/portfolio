@@ -28,7 +28,6 @@ const styles = theme => ({
     },
     emailIcon: {
         color: "black",
-        marginBottom: '3px',
     }
 });
 
@@ -46,7 +45,7 @@ class Bio extends React.Component {
                     />
                     <CardContent>
                         <Typography className="bio-summary" type="body1" gutterBottom>
-                            Hello! My name is Greg Perlman and am currently working in South Florida as a software engineer. I enjoy imagining system designs and architectures, as well as their implementations on both the front and back-ends. I'm always aiming to get a deeper understanding of the technologies I use everyday, as I feel it enhances productivity and capabilities for myself and my peers. At the moment, I'm experimenting with Sails JS as a means to get into real-time, distrbuted systems, and continuing to develop my prowess within the React ecosystem.
+                            Hello! My name is Greg Perlman and am currently working in South Florida as a software engineer. I enjoy imagining system designs and architectures, as well as their implementations on both the front and back-ends. I'm always aiming to get a deeper understanding of the technologies I use everyday, as I feel it enhances productivity and capabilities for myself and my peers. Feel free to reach out to me with the links provided below.
                         </Typography>
                     </CardContent>
                     <CardActions disableActionSpacing>
@@ -57,7 +56,7 @@ class Bio extends React.Component {
                         </Tooltip>
                         <Tooltip title="Connect with me on LinkedIn" placement="bottom">
                             <IconButton aria-label="LinkedIn Link">
-                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/gregperlman/"><img style={{ height: '25px', 'width': '25px' }} src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CIS-A2K_Linkedin_Icon_%28Black%29.svg/600px-CIS-A2K_Linkedin_Icon_%28Black%29.svg.png" alt="LinkedIn Icon" /></a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/gregperlman/"><img style={{ height: '25px', 'width': '25px' }} src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-1.svg" alt="LinkedIn Icon" /></a>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title="Contact Me" placement="bottom">
