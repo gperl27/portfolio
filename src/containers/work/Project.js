@@ -13,7 +13,7 @@ import Divider from 'material-ui/Divider';
 
 const styles = theme => ({
   media: {
-    height: 250,
+    height: 300,
   },
   row: {
     display: 'flex',
@@ -61,7 +61,7 @@ class Project extends React.Component {
     } = this.props;
 
     return (
-      <Grid item xs={12} sm={6} md={4}>
+      <Grid item xs={12} sm={6} md={6} lg={4}>
         <Card className={classes.card}>
           <CardMedia
             className={classes.media}

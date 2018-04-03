@@ -37,7 +37,7 @@ const Work = props => {
                 justify="center"
                 alignContent="center"
             >
-                <Grid item xs={10}>
+                <Grid item xs={10} sm={10} md={8} >
                     <ProjectList />
                 </Grid>
             </Grid>

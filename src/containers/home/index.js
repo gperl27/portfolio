@@ -53,7 +53,7 @@ const Home = props => {
         alignItems='center'
         justify='center'
       >
-        <Grid item md={4} sm={6} xs={10}>
+        <Grid item lg={3} md={4} sm={6} xs={10}>
           <Bio />
         </Grid>
       </Grid>
